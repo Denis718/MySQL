@@ -1,0 +1,7 @@
+Como configurar o prompt de comando para usar mysql ou MariaDB:
+
+Acessar a pasta c:\xampp\mysql\bin
+>mysql -u root -p -h 172.0.0.1
+ -u : user;
+ -p : password;
+ -h : host;

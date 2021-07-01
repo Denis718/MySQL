@@ -1,0 +1,16 @@
+//SELECT AGRUPANDO E AGREGANDO
+select totaulas, count(nome) from cursos where totaulas > 20
+group by totaulas;
+
+//SELECT_HAVING CAMPO RELAÇÃO
+select ano, count(*) from cursos
+where totaulas > 30
+group by ano
+having ano > 2013
+order by count(*) desc;
+
+select carga, count(*) from cursos //SELECIONOU
+where ano > 2015 // FILTROU
+group by carga // AGRUPOU
+having carga > (select avg(carga) from cursos) //MOSTROU CARGA ACIMA DA MEDIA DE OUTRO SELECT
+order by carga; // ORDENOU POR CARGA

@@ -1,0 +1,5 @@
+Gerenciando Cópias de Segurança MySQL
+
+Server>Data export>
+
+https://www.youtube.com/watch?v=w6OYS_M7hTM&list=PLHz_AreHm4dkBs-795Dsgvau_ekxg8g1r&index=10

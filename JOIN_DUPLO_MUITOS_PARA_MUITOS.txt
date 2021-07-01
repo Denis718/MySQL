@@ -1,0 +1,23 @@
+// RELAÇÃO MUITOS_PARA_MUITOS
+
+create table gafanhoto_assiste_curso (//RELAÇÃO-ENTIDADE
+id int not null auto_increment,
+data date,
+idgafanhoto int,
+idcurso int,
+primary key (id),
+foreign key (idgafanhoto) references gafanhotos(id),//FK GAFANHOTO
+foreign key (idcurso) references cursos(idcurso) // FK CURSOS
+) default charset = utf8;
+
+desc gafanhoto_assiste_curso;
+
+insert into gafanhoto_assiste_curso value // INSERÇÃO
+(default, '2014-03-01','1','2');
+
+select g.nome, c.nome from gafanhotos as g
+join gafanhoto_assiste_curso as a //JOIN PARA GAFANHOTOS E GAFANHOTOS_ASSISTE_CURSO
+on g.id = a.idgafanhoto //SOB EQUIVALENTES
+join cursos as c //JOIN CURSOS E GAFANHOTOS_ASSISTE_CURSO
+on c.idcurso = a.idcurso //SOB EQUIVALENTES
+order by g.nome;

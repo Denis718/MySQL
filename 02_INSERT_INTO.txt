@@ -1,0 +1,26 @@
+*** Com especificação de campos ***
+
+insert into pessoas
+(id, nome, nascimento, sexo, peso, altura, nacionalidade)
+values
+(default, 'Creuza', '1920-12-30', 'F', '50.2', '1.55', default);
+
+select * from pessoas;
+
+*** Sem especificação de campos ****
+
+insert into pessoas values
+(default, 'Creuza', '1920-12-30', 'F', '50.2', '1.55', default);
+
+select * from pessoas;
+
+*** Várias Inserções ***
+
+insert into pessoas 
+(id, nome, nascimento, sexo, peso, altura, nacionalidade)
+values
+(default, 'Ana', '1975-12-22', 'F', '52.3', '1.65', 'EUA'),
+(default, 'Pedro', '2000-07-15', 'M', '65.0', '1.70', 'Brasil'),
+(default, 'Josefa', '1948-08-26', 'F', '73.6', '1.60', 'Portugal');
+
+select * from pessoas;

@@ -1,0 +1,34 @@
+Comando SELECT
+
+//SELECIONAR EM ORDEM DE
+select * from cursos order by nome desc;
+
+//SELECIONAR CAMPOS ESPECIFICOS
+select ano, nome, carga from cursos order by ano, nome;
+
+//SELECIONAR CAMPOS POR LINHAS ESPECIFICAS
+ select nome, carga from cursos
+ where ano = '2016'
+ order by nome;
+
+//SELECIONAR COM BASE EM OPERADORES RELACIONAIS (<= = >= !=)
+select nome, descricao, ano from cursos
+ where ano <= '2015'
+ order by ano, nome;
+
+select * from cursos
+where carga > 35 and totaulas <= 30;
+
+select idcurso, carga, nome, totaulas from cursos
+where carga > 35 or totaulas <= 30;
+
+
+//SELECIONAR ENTRE VALORES USAR BETWEEN
+select nome, ano from cursos
+where ano between 2014 and 2016
+order by ano desc, nome asc;
+
+//SELECIONAR DE FORMA RESTRITA USAR IN
+select idcurso, nome, ano from cursos
+where ano in ('2014','2016','2018')
+order by ano desc, nome asc;

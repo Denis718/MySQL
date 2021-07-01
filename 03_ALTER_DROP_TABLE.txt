@@ -1,0 +1,61 @@
+DESC PESSOAS;
+
+DESC PESSOAS;
+
+desc gafanhotos;
+
+//RENOMEAR TABELA
+alter table gafanhoto
+rename to gafanhotos;
+
+
+// ADICIONAR COLUNA
+alter table pessoas
+add column profissao varchar(10);
+
+//EXCLUIR COLUNA
+alter table pessoas
+drop column profissao;
+
+
+//ADICIONAR COLUNA NA PRIMEIRA POSICAO
+alter table pessoas
+add column codigo int first;
+
+//ADICIONAR COLUNA DEPOIS DE DETERMINA COLUNA
+alter table pessoas
+add column profissao varchar(10) after nome;
+
+//MODIFICAR COLUNA EXISTENTE - UMA CONSTRAINT NÃO PODE CONFLITAR COM OUTRA JÁ EXISTENTE(NULL)
+alter table pessoas
+modify column profissao varchar(20) NOT NULL DEFAULT '';
+
+//MUDAR O NOME DA COLUNA NA TABELA
+alter table pessoas
+change column profissao prof varchar(20);
+
+
+select * from pessoas;
+
+
+//TABELA CURSO
+create table if not exists cursos (
+nome varchar(30) not null unique,
+descricao text,
+carga int unsigned,
+totaulas int unsigned,
+ano year default '2020'
+) default charset utf8;
+
+desc cursos;
+
+alter table cursos
+add column idcurso int first;
+
+alter table cursos
+add primary key (idcurso);
+
+select * from cursos;
+
+insert into cursos value
+('default', 'POO', 'aula06', '30', '20', '2020');

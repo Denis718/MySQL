@@ -1,0 +1,28 @@
+//SELECT BUSCA POR CONTÉM VALOR
+select * from cursos
+where nome like 'P%';
+
+//SELECT BUSCA POR NÃO CONTÉM VALOR
+select * from cursos
+where nome not like 'A%';
+
+//SELECT BUSCA ONDE TERMINA COM QUALQUER CARACTER
+select * from cursos
+where nome like 'ph%p_';
+
+//SELECT PARA VALORER DISTINTOS
+select distinct nacionalidade from gafanhotos
+order by nacionalidade;
+
+//SELECT POR FUNÇÃO DE AGREGAÇÃO COUNT()
+select count(*) from cursos where carga > 40;
+
+//SELECT MAX(PARÂMETRO) E MIN(PARÂMETRO)
+select max(totaulas) from cursos where ano = '2016';
+select min(totaulas) from cursos where ano = '2016';
+
+//SELECT PARA SOMAR NÚMEROS
+select sum(totaulas) from cursos where ano = '2016';
+
+//SELECT PARA MÉDIA
+select avg(totaulas) from cursos where ano = '2016';

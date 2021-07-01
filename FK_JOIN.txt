@@ -1,0 +1,33 @@
+SUPORTE A CHAVES ESTRANGEIRAS, GARANTIR COMPATIBILIDADE ACID, ENGINE INNODB EM CREATE DATABASE
+Transação por INNODB (Olhar exportação *.sql EM BLOCO DE NOTAS)
+
+ACID
+
+A - ATOMICIDADE
+C - CONSISTÊNCIA
+I - ISOLAMENTO
+D - DURABILIDADE
+
+//ADICIONAR NOVA COLUNA QUE RECEBE F_K
+alter table gafanhotos
+add column cursopreferido int;
+
+//ADICIONAR A CHAVE ESTRANGEIRA
+alter table gafanhotos
+add foreign key (cursopreferido)
+references cursos(idcurso);
+
+//INNER JOIN
+select g.nome, c.nome, c.ano 
+from gafanhotos as g inner join cursos as c
+on c.idcurso = g.cursopreferido;
+
+//SELECIONAR TODOS OS VALORES DA TABELA DA ESQUERDA (GAFANHOTOS)
+select g.nome, c.nome, c.ano 
+from gafanhotos as g left outer join cursos as c // "AS" PARA APELIDAR TABELAS
+on c.idcurso = g.cursopreferido;
+
+//SELECIONAR TODOS OS VALORES DA TABELA DA DIREITA (CURSOS)
+select g.nome, c.nome, c.ano 
+from gafanhotos as g right outer join cursos as c
+on c.idcurso = g.cursopreferido;
